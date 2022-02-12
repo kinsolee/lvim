@@ -1,4 +1,3 @@
-
 --[[
 lvim is the global options object
 
@@ -6,11 +5,10 @@ Linters should be
 filled in as strings with either
 a global executable or a path to
 an executable
-]]
--- THESE ARE EXAMPLE CONFIGS FEEL FREE TO CHANGE TO WHATEVER YOU WANT
-
+]] -- THESE ARE EXAMPLE CONFIGS FEEL FREE TO CHANGE TO WHATEVER YOU WANT
 require "user.keys"
 require "user.plugins"
+require "user.formatters"
 
 -- general
 lvim.log.level = "warn"
@@ -67,24 +65,16 @@ lvim.builtin.dashboard.active = true
 lvim.builtin.notify.active = true
 lvim.builtin.terminal.active = true
 lvim.builtin.nvimtree.setup.view.side = "left"
+lvim.builtin.nvimtree.setup.open_on_setup = true
 lvim.builtin.nvimtree.show_icons.git = 0
 
 -- if you don't want all the parsers change this to a table of the ones you want
 lvim.builtin.treesitter.ensure_installed = {
-  "bash",
-  "c",
-  "javascript",
-  "json",
-  "lua",
-  "python",
-  "typescript",
-  "css",
-  "rust",
-  "java",
-  "yaml",
+    "bash", "c", "javascript", "json", "lua", "python", "typescript", "css",
+    "rust", "java", "yaml", "go"
 }
 
-lvim.builtin.treesitter.ignore_install = { "haskell" }
+lvim.builtin.treesitter.ignore_install = {"haskell"}
 lvim.builtin.treesitter.highlight.enabled = true
 
 -- generic LSP settings
@@ -151,7 +141,6 @@ lvim.builtin.treesitter.highlight.enabled = true
 --       cmd = "TroubleToggle",
 --     },
 -- }
-
 
 -- Autocommands (https://neovim.io/doc/user/autocmd.html)
 -- lvim.autocommands.custom_groups = {
